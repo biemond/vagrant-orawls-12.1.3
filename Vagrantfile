@@ -21,10 +21,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   
     admin.vm.provision :shell, :inline => "ln -sf /vagrant/puppet/hiera.yaml /etc/puppet/hiera.yaml;rm -rf /etc/puppet/modules;ln -sf /vagrant/puppet/modules /etc/puppet/modules"
- 
-    admin.librarian_puppet.puppetfile_dir = "puppet"
-    # placeholder_filename defaults to .PLACEHOLDER
-    admin.librarian_puppet.placeholder_filename = ".MYPLACEHOLDER"
 
     admin.vm.provision :puppet do |puppet|
       puppet.manifests_path    = "puppet/manifests"
