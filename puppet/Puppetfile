@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+forge "https://forge.puppetlabs.com"
+
+
+# modules from the Puppet Forge
+mod 'biemond/jdk7'
+mod 'biemond/orautils'
+mod 'fiddyspence/sysctl'
+mod 'erwbgy/limits'
+mod 'adrien/filemapper'
+mod 'reidmv/yamlfile'
+
+# latest modules from git
+mod 'biemond/orawls',
+   :git => 'git@github.com:biemond/biemond-orawls.git'
+
+mod 'hajee/easy_type',
+   :git => 'git@github.com:hajee/easy_type.git'
