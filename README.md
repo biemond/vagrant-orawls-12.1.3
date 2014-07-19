@@ -3,7 +3,7 @@
 ##Details
 - Oracle Linux 6.5 vagrant box
 - Puppet 3.6.2
-- Vagrant >= 1.41 + vagrant-librarian-puppet
+- Vagrant >= 1.41
 - Oracle Virtualbox >= 4.3.6 
 
 creates a 12.1.3 WebLogic cluster ( admin, node1, node2 )
@@ -20,8 +20,12 @@ edit Vagrantfile and update the software share
 -jdk-7u51-linux-x64.tar.gz
 -fmw_12.1.3.0.0_wls.jar
 
-###Vagrant librarian puppet plugin
--vagrant plugin install vagrant-librarian-puppet
+###Setup puppet modules from the desktop
+-gem install librarian-puppet
+-cd puppet
+-rm -rf modules
+-librarian-puppet install
+
 
 ###Startup the images
 -vagrant up admin
@@ -30,8 +34,3 @@ edit Vagrantfile and update the software share
 
 
 
-###Setup puppet modules from the desktop
--gem install librarian-puppet
--cd puppet
--rm -rf modules
--librarian-puppet install or librarian-puppet outdated
