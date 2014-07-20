@@ -18,6 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     admin.vm.provider :virtualbox do |vb|
       vb.customize ["modifyvm", :id, "--memory", "2048"]
       vb.customize ["modifyvm", :id, "--name"  , "admin"]
+      vb.customize ["modifyvm", :id, "--cpus"  , 2]
     end
   
     admin.vm.provision :shell, :inline => "ln -sf /vagrant/puppet/hiera.yaml /etc/puppet/hiera.yaml;rm -rf /etc/puppet/modules;ln -sf /vagrant/puppet/modules /etc/puppet/modules"
@@ -48,7 +49,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
     node1.vm.provider :virtualbox do |vb|
       vb.customize ["modifyvm", :id, "--memory", "1532"]
-      vb.customize ["modifyvm", :id, "--name", "node1"]
+      vb.customize ["modifyvm", :id, "--name"  , "node1"]
     end
   
     node1.vm.provision :shell, :inline => "ln -sf /vagrant/puppet/hiera.yaml /etc/puppet/hiera.yaml;rm -rf /etc/puppet/modules;ln -sf /vagrant/puppet/modules /etc/puppet/modules"
