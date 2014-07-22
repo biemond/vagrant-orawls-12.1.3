@@ -16,24 +16,20 @@ edit Vagrantfile and update the software share
 - node1.vm.synced_folder "/Users/edwin/software", "/software"
 - node2.vm.synced_folder "/Users/edwin/software", "/software"
 
-###software
-
--jdk-7u51-linux-x64.tar.gz
--fmw_12.1.3.0.0_wls.jar
+###Software
+- jdk-7u51-linux-x64.tar.gz
+- fmw_12.1.3.0.0_wls.jar
 
 ###Setup puppet modules from the desktop
-
--gem install librarian-puppet
--cd puppet
--rm -rf modules
--librarian-puppet install
-
+- gem install librarian-puppet
+- cd puppet
+- rm -rf modules
+- librarian-puppet install
 
 ###Startup the images
-
--vagrant up admin
--vagrant up node1
--vagrant up node2
+- vagrant up admin
+- vagrant up node1
+- vagrant up node2
 
 
 
